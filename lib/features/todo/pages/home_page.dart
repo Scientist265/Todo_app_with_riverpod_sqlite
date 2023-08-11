@@ -9,6 +9,7 @@ import 'package:todo_app_withapi/common/widgets/height_spacer.dart';
 import 'package:todo_app_withapi/common/widgets/reusable_text.dart';
 import 'package:todo_app_withapi/common/widgets/text_style.dart';
 import 'package:todo_app_withapi/common/widgets/width_spacer.dart';
+import 'package:todo_app_withapi/features/todo/pages/add_task.dart';
 import 'package:todo_app_withapi/features/todo/widgets/todo_tile.dart';
 
 import '../controllers/xpansion_provider.dart';
@@ -54,7 +55,12 @@ class _HomePageState extends ConsumerState<HomePage>
                               borderRadius:
                                   BorderRadius.all(Radius.circular(9))),
                           child: GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const AddTask()));
+                            },
                             child: const Icon(
                               Icons.add,
                               color: AppConst.kBkDark,

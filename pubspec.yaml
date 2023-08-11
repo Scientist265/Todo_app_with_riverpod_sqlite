@@ -24,6 +24,8 @@ dependencies:
   country_picker: ^2.0.20
   pinput: ^3.0.0
   riverpod_annotation:
+  sqflite: ^2.3.0
+  dynamic_color: ^1.6.6
   
   
 dev_dependencies:
