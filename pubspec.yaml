@@ -26,6 +26,7 @@ dependencies:
   riverpod_annotation:
   sqflite: ^2.3.0
   dynamic_color: ^1.6.6
+  flutter_datetime_picker_plus: ^2.0.1
   
   
 dev_dependencies:
