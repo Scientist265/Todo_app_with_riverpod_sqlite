@@ -16,6 +16,11 @@ class TodoState extends _$TodoState {
     state = data.map((e) => TaskModel.fromJson(e)).toList();
   }
 
+  void addItem(TaskModel task) async {
+    await DBHelper.createItem(task);
+    refresh();
+  }
+
   void updateItem(
     int id,
     String title,
@@ -77,7 +82,7 @@ class TodoState extends _$TodoState {
     }
     return dates;
   }
-  
+
   bool getStatus(TaskModel data) {
     bool? isCompleted;
     if (data.isCompleted == 0) {

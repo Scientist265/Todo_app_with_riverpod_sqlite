@@ -21,7 +21,7 @@ final dateStateProvider =
 );
 
 typedef _$DateState = AutoDisposeNotifier<String>;
-String _$startTimeStateHash() => r'54c1e11a56495492c2048a609292510448613ec7';
+String _$startTimeStateHash() => r'c616e4b64af61e95059d5d719382b83e54b9db71';
 
 /// See also [StartTimeState].
 @ProviderFor(StartTimeState)

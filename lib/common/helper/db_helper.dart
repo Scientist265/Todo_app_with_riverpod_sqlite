@@ -14,19 +14,18 @@ class DBHelper {
         ")");
 
     await database.execute("CREATE TABLE user("
-        "id INTEGER PRIMARY KEY AUTOINCREMENT DEFAULT 0"
-        "isVerified INTEGER, "
-        ")");
+        "id INTEGER PRIMARY KEY AUTOINCREMENT DEFAULT 0, "
+        "isVerified INTEGER)");
   }
 
   static Future<sql.Database> db() async {
     return sql.openDatabase("devScientist", version: 1,
-        onCreate: ((db, version) async {
-      await createTables(db);
-    }));
+        onCreate: (sql.Database database, int version) async {
+      await createTables(database);
+    });
   }
 
-  static Future<int> creatItem(TaskModel task) async {
+  static Future<int> createItem(TaskModel task) async {
     final db = await DBHelper.db();
     final id = await db.insert("todos", task.toJson(),
         conflictAlgorithm: sql.ConflictAlgorithm.replace);
